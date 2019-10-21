@@ -8,6 +8,7 @@
 
 import random  
 
+# initiate game
 print("\tWelcome to 'Guess My Number'!")
 print("\nI'm thinking of a number between 1 and 100.")
 print("Try to guess it in as few attempts as possible.\n")
@@ -16,22 +17,25 @@ print("Try to guess it in as few attempts as possible.\n")
 user_input = int(input("input a number between 1 and 100:  "))
 
 
-
+# initiate game values
 computer_guess = 0
 lower = 1
 upper = 100
 
+# initiate while loop for guessing
 tries = 0
 while user_input!= computer_guess:
     computer_guess = random.randint(lower, upper)
     print(computer_guess)
     if computer_guess == user_input:
         print("that's correct!")
-
+    
+    # decrease the upper guess range
     elif computer_guess > user_input:
         print("computer guess is too high!")
         upper = computer_guess
 
+    #increase the lower guess range
     elif computer_guess < user_input:
         print("computer guess is too Low")
         lower = computer_guess
@@ -43,6 +47,6 @@ while user_input!= computer_guess:
     tries+=1
 
 print("it took the computer " , tries , "to guess your number")
-print("complete")
+print("complete!")
 
 
