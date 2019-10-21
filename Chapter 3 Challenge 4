@@ -1,0 +1,48 @@
+# Guess My Number
+#
+# The User picks a random number between 1 and 100
+# The computer then chooses a random number
+# if the number is too high then I change its range it can guess within
+# it keeps changing the range untill it guesses it
+
+
+import random  
+
+print("\tWelcome to 'Guess My Number'!")
+print("\nI'm thinking of a number between 1 and 100.")
+print("Try to guess it in as few attempts as possible.\n")
+
+# set the initial values
+user_input = int(input("input a number between 1 and 100:  "))
+
+
+
+computer_guess = 0
+lower = 1
+upper = 100
+
+tries = 0
+while user_input!= computer_guess:
+    computer_guess = random.randint(lower, upper)
+    print(computer_guess)
+    if computer_guess == user_input:
+        print("that's correct!")
+
+    elif computer_guess > user_input:
+        print("computer guess is too high!")
+        upper = computer_guess
+
+    elif computer_guess < user_input:
+        print("computer guess is too Low")
+        lower = computer_guess
+
+    else:
+       print("we got a problem")
+
+        
+    tries+=1
+
+print("it took the computer " , tries , "to guess your number")
+print("complete")
+
+
